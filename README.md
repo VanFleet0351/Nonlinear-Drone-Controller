@@ -15,6 +15,8 @@
 #### About the ESN:
   An ESN is a type of [recurrent neural network (RNN)](https://en.wikipedia.org/wiki/Recurrent_neural_network) that uses [resevoir computing (RC)](https://en.wikipedia.org/wiki/Reservoir_computing) model. The big difference between an ESN and other non-RC networks is that the hidden layer, known as the reservoir, of the network is random and sparsely connected with random uniformly distributed weights. The random edges in the reservoir remove the linear layered structure of the other types of networks we previously talked about. After the creation, it is treated as a black box. There are no recurrent edges to and from the input and output layers and only the weights of the edges leading to the output layer are adjusted during training.
   
+![echo state network](img/Screen Shot 2020-11-18 at 3.08.55 PM.png)
+  
   The training phase of the ESN also differs from most other common artificial neural networks in that it is further split into 2 separate periods, The listening (or observation) period and the tuning period. During the listening period we feed the reservoir with an input signal that we know the desired output for. While this signal is being fed to the reservoir, we record the state of the reservoir for each step-in time. If the input signal is discrete the time step will naturally be for each bit of discrete input data, if the input signal is continuous the time should be predetermined. Once the listening period has ended the weights of the output edges are tuned to minimize the error between output and the desired output.
   
 ### Project Outcome:
